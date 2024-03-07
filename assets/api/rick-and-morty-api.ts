@@ -4,16 +4,16 @@ import {Nullable} from '../types/Nullable';
 export class RickAndMortyApi {
   constructor(private instance: AxiosInstance) {}
 
-  public getCharacters(params?: ParamsType) {
-    return this.instance
-      .get<ResponseType<CharacterType>>("/character", { params })
-      .then((res) => res.data);
+  public async getCharacters(params?: ParamsType) {
+    const res = await this.instance
+        .get<ResponseType<CharacterType>>("/character", {params});
+    return res.data;
   }
 
-  public getCharacter(id: string) {
-    return this.instance
-      .get<CharacterType>(`/character/${id}`)
-      .then((res) => res.data);
+  public async getCharacter(id: string) {
+    const res = await this.instance
+        .get<CharacterType>(`/character/${id}`);
+    return res.data;
   }
 
   public getLocations(params?: ParamsType) {
@@ -28,10 +28,10 @@ export class RickAndMortyApi {
       .then((res) => res.data);
   }
 
-  public getEpisodes(params?: ParamsType) {
-    return this.instance
-      .get<ResponseType<EpisodeType>>("/episode", { params })
-      .then((res) => res.data);
+  public async getEpisodes(params?: ParamsType) {
+    const res = await this.instance
+        .get<ResponseType<EpisodeType>>("/episode", {params});
+    return res.data;
   }
 
   public getEpisode(id: string) {

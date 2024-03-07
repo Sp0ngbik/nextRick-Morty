@@ -9,11 +9,11 @@ export const HeadMeta = (props: PropsType) => {
 
   const description = title
     ? `Rick and Morty ${title.toLowerCase()}`
-    : "Master class for IT-incubator";
+    : "Rick and Morty";
 
   return (
     <Head>
-      <title>{title ?? "NextJS Master Class"}</title>
+      <title>{title ?? "Rick and Morty"}</title>
       <meta name="description" content={description} />
       <link rel="icon" href="/favicon.svg" />
     </Head>
