@@ -36,6 +36,7 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
 
 type PropsType = {
     character: CharacterType
+    episodes: { name: string, id: string }[]
 }
 
 const Character = (props: PropsType) => {
@@ -46,16 +47,15 @@ const Character = (props: PropsType) => {
 
     const characterId = router.query.id
 
-    const goToCharacters = ()=>{
+    const goToCharacters = () => {
         return router.push('/characters')
     }
-
     return (
         <PageWrapper>
             <CardWrapper>
-            <IdText>ID: {characterId}</IdText>
-            <CharacterCard key={character.id} character={character}/>
-            <ButtonCharacters onClick={goToCharacters}>GO TO CHARACTERS</ButtonCharacters>
+                <IdText>ID: {characterId}</IdText>
+                <CharacterCard key={character.id} character={character}/>
+                <ButtonCharacters onClick={goToCharacters}>GO TO CHARACTERS</ButtonCharacters>
             </CardWrapper>
         </PageWrapper>
     );
@@ -70,13 +70,14 @@ const ButtonCharacters = styled.button`
     background-color: inherit;
     border-radius: 5px;
     margin: 20px;
-    &:hover{
+
+    &:hover {
         cursor: pointer;
     }
 `
 
 const CardWrapper = styled.div`
-align-items: center;
+    align-items: center;
     display: flex;
     flex-direction: column`
 

@@ -10,7 +10,7 @@ export const getServerSideProps: GetServerSideProps = async ({res}) => {
 
     const episodes = await API.rickAndMorty.getEpisodes()
 
-    const isAuth = false
+    const isAuth = true
 
     if (!episodes) {
         return {
@@ -37,9 +37,9 @@ export const getServerSideProps: GetServerSideProps = async ({res}) => {
 type PropsType = {
     episodes: ResponseType<EpisodeType>
 }
-
 const Episodes = (props: PropsType) => {
     const {episodes} = props
+
     const episodesList = episodes.results.map(episode => (<Card name={episode.name} key={episode.id}/>))
     return (
         <PageWrapper>
