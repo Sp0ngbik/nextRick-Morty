@@ -1,8 +1,8 @@
-import {API} from "../../assets/api/api";
-import {EpisodeType, ResponseType} from "../../assets/api/rick-and-morty-api";
-import {PageWrapper} from "../../components/PageWrapper/PageWrapper";
-import {Card} from "../../components/Card/Card";
-import {getLayout} from "../../components/Layout/BaseLayout/BaseLayout";
+import {API} from "assets/api/api";
+import {EpisodeType, ResponseType} from "assets/api/rick-and-morty-api";
+import {PageWrapper} from "components/PageWrapper/PageWrapper";
+import {Card} from "components/Card/Card";
+import {getLayout} from "components/Layout/BaseLayout/BaseLayout";
 import {GetServerSideProps} from "next";
 
 export const getServerSideProps: GetServerSideProps = async ({res}) => {
@@ -10,7 +10,7 @@ export const getServerSideProps: GetServerSideProps = async ({res}) => {
 
     const episodes = await API.rickAndMorty.getEpisodes()
 
-    const isAuth = true
+    const isAuth = false
 
     if (!episodes) {
         return {

@@ -1,6 +1,6 @@
 import {getLayout} from "components/Layout/BaseLayout/BaseLayout";
 import {PageWrapper} from "components/PageWrapper/PageWrapper";
-import LoginNavigate from "../../hoc/LoginNavigate";
+import LoginNavigate from "hoc/LoginNavigate";
 
 const Private = () => {
 

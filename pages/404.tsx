@@ -1,6 +1,6 @@
 import React from 'react';
-import {getLayout} from "../components/Layout/BaseLayout/BaseLayout";
-import {PageWrapper} from "../components/PageWrapper/PageWrapper";
+import {getLayout} from "components/Layout/BaseLayout/BaseLayout";
+import {PageWrapper} from "components/PageWrapper/PageWrapper";
 
  const NotFound = () => {
     return (
